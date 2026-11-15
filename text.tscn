@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cu0ktgmno1x3a"]
+
+[sub_resource type="FontFile" id="FontFile_82rfi"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+
+[sub_resource type="Theme" id="Theme_82xsv"]
+default_font = SubResource("FontFile_82rfi")
+default_font_size = 36
+
+[node name="RichTextLabel" type="RichTextLabel" unique_id=1726058630]
+offset_left = -319.0
+offset_top = 5.0
+offset_right = 393.0
+offset_bottom = 267.0
+theme = SubResource("Theme_82xsv")
+bbcode_enabled = true
+text = "Use WASD or arrow keys to move.
+Space to dash."
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2113501167]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 81.0
+offset_right = 853.0
+offset_bottom = 237.0
+text = "Dash into the bubble."

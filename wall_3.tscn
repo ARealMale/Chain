@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://chrc1mnxkgctd"]
+
+[ext_resource type="Script" uid="uid://bkxs01cx0n8bd" path="res://wall_component3.gd" id="1_7p161"]
+[ext_resource type="AudioStream" uid="uid://cmy354sd23jkv" path="res://Wall break.mp3" id="2_n2hse"]
+[ext_resource type="Texture2D" uid="uid://py3jopjeidy2" path="res://Pillar_gate_1.png" id="3_3ex67"]
+[ext_resource type="Texture2D" uid="uid://1pf8jfxm83yk" path="res://Pillar_gate_2.png" id="4_rt16n"]
+[ext_resource type="Texture2D" uid="uid://deuxbncv01ihq" path="res://Pillar_gate_3.png" id="5_vu8vb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_67jsu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3ex67")
+}],
+"loop": 1,
+"name": &"gate 1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rt16n")
+}],
+"loop": 1,
+"name": &"gate 2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vu8vb")
+}],
+"loop": 1,
+"name": &"gate 3",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbq63"]
+size = Vector2(86, 808)
+
+[node name="Wall 3" type="Node2D" unique_id=1392070926]
+
+[node name="WallComponent" type="StaticBody2D" parent="." unique_id=169992997]
+constant_linear_velocity = Vector2(200, 175)
+script = ExtResource("1_7p161")
+
+[node name="WallBreak" type="AudioStreamPlayer" parent="WallComponent" unique_id=1597217866]
+stream = ExtResource("2_n2hse")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WallComponent" unique_id=1244608638]
+sprite_frames = SubResource("SpriteFrames_67jsu")
+animation = &"gate 3"
+
+[node name="WallCollider" type="CollisionShape2D" parent="WallComponent" unique_id=1678542649]
+position = Vector2(1, 35)
+shape = SubResource("RectangleShape2D_kbq63")

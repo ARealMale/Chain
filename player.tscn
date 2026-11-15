@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://cn1vk2bpqjajd"]
+
+[ext_resource type="Script" uid="uid://bhth1r5cs2gc0" path="res://player.gd" id="1_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://c2w8kyh1g6krg" path="res://Dash sfx.mp3" id="3_sweqy"]
+[ext_resource type="Texture2D" uid="uid://ckiy8s3vgvwwx" path="res://Plys_sprites.png" id="4_hqtel"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b26j0"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(512, 3577, 212, 217)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1c27"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(1148, 3577, 212, 217)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_op7ga"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(1360, 3577, 212, 217)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q13i1"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(1148, 3794, 212, 217)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(724, 3577, 212, 217)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(300, 3360, 212, 217)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(512, 3360, 212, 217)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jxqw"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(724, 3360, 212, 217)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvl01"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(936, 3577, 212, 217)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw050"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(300, 3577, 212, 217)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivps1"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(300, 3794, 212, 217)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urp6f"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(512, 3794, 212, 217)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwjto"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(724, 3794, 212, 217)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_606se"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(936, 3794, 212, 217)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vmyjo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b26j0")
+}],
+"loop": 1,
+"name": &"apex_enter_dash",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1c27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_op7ga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q13i1")
+}],
+"loop": 1,
+"name": &"dash",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7ghd")
+}],
+"loop": 1,
+"name": &"fall",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hs0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jxqw")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvl01")
+}],
+"loop": 1,
+"name": &"land",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw050")
+}],
+"loop": 1,
+"name": &"rise",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivps1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urp6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwjto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_606se")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
+radius = 45.0
+height = 176.0
+
+[node name="player" type="CharacterBody2D" unique_id=1442244322]
+script = ExtResource("1_i3pqv")
+
+[node name="DashSfx" type="AudioStreamPlayer" parent="." unique_id=1635144360]
+stream = ExtResource("3_sweqy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1766819596]
+sprite_frames = SubResource("SpriteFrames_vmyjo")
+animation = &"land"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1916393458]
+position = Vector2(0, 10)
+shape = SubResource("CapsuleShape2D_i3pqv")
+
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

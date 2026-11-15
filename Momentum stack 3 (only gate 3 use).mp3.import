@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://byo56w2ehw1qg"
+path="res://.godot/imported/Momentum stack 3 (only gate 3 use).mp3-f50e4f01f2d212c60ea1d8522f378ffb.mp3str"
+
+[deps]
+
+source_file="res://Momentum stack 3 (only gate 3 use).mp3"
+dest_files=["res://.godot/imported/Momentum stack 3 (only gate 3 use).mp3-f50e4f01f2d212c60ea1d8522f378ffb.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

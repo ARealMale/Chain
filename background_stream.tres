@@ -1,0 +1,35 @@
+[gd_resource type="AudioStreamInteractive" format=3 uid="uid://kkmms0voi7mo"]
+
+[ext_resource type="AudioStream" uid="uid://k5pfgskebshi" path="res://REM Gate 3 base.mp3" id="1_wypmi"]
+[ext_resource type="AudioStream" uid="uid://b3i8vlowpx1qb" path="res://REM Gate 2 base.mp3" id="2_ags82"]
+[ext_resource type="AudioStream" uid="uid://cyg4vbs5c48k8" path="res://REM Gate 1 base.mp3" id="3_25mjn"]
+[ext_resource type="AudioStream" uid="uid://duo8vcbtrttsj" path="res://Outro song.mp3" id="4_ags82"]
+
+[resource]
+clip_count = 4
+clip_0/name = &"Gate 1 Base"
+clip_0/stream = ExtResource("3_25mjn")
+clip_0/auto_advance = 0
+clip_1/name = &"Gate 2 Base"
+clip_1/stream = ExtResource("2_ags82")
+clip_1/auto_advance = 0
+clip_2/name = &"Gate 3 Base"
+clip_2/stream = ExtResource("1_wypmi")
+clip_2/auto_advance = 0
+clip_3/name = &"Outro Song"
+clip_3/stream = ExtResource("4_ags82")
+clip_3/auto_advance = 0
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 4.0,
+"fade_mode": 3,
+"from_time": 1,
+"to_time": 0
+},
+Vector2i(-1, 3): {
+"fade_beats": 1.0,
+"fade_mode": 0,
+"from_time": 0,
+"to_time": 1
+}
+}

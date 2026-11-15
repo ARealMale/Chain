@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://duo8vcbtrttsj"
+path="res://.godot/imported/Outro song.mp3-5cf825c463e27a7ee8a252e9c1418b52.mp3str"
+
+[deps]
+
+source_file="res://Outro song.mp3"
+dest_files=["res://.godot/imported/Outro song.mp3-5cf825c463e27a7ee8a252e9c1418b52.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
